@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MAGIC 8 BALL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h1 class="header">MAGIC 8-BALL</h1>
+
+    <div class="shadow"></div>
+
+    <div class="epos">
+        <div class="eball">
+            <div class="egrad"></div>
+            <div class="ewin"></div>
+            <div class="triangle"></div>
+            <div class="textbox"></div>
+        </div>
+    </div>
+
+    <script>
+         var words = [
+            'NAH', 'YUP', 'IDK', 'BROTHA AUGH', 'UHMMM', 'UR JOKING', 'FUCK IT', 'ASK THE GC', 'PROLLY', 'UR MOM', 'HELL NAW', 'PLEASE', 'RETHINK THAT ONE', 'GET IT IG'
+        ];
+
+        var getRandomWord = function () {
+            return words[Math.floor(Math.random() * words.length)];
+        };
+
+        $(document).ready(function(){
+            $('.eball').click(function(){
+                console.log('Ball clicked');
+                $('.textbox').html(getRandomWord());
+            });
+        });
+    </script>
+</body>
+</html>
+
